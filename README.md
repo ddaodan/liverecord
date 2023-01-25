@@ -1,6 +1,8 @@
-## 功能介绍
+# LiveRecord ddaodan修改版
+
+## 介绍
 record_new.sh为自动录播脚本  
-  * 支持youtube频道、twitcast频道、twitch频道、openrec频道、niconico生放送、niconico社区、niconico频道、mirrativ频道、reality频道、17live频道、chaturbate频道、bilibili频道、streamlink支持的直播网址、ffmpeg支持的m3u8地址
+  * 支持多种网站
   * 其中youtube支持cookies录制，niconico支持登录账号录制，bilibili支持cookies录制与代理
   * 可以设置在其他频道直播时不进行录制避免转播与双推流
   * 支持rclone、onedrive与baidupcs上传并根据上传情况清理本地文件  
@@ -11,6 +13,20 @@ install.sh为一键安装脚本
 record_twitcast.py是录制twitcast的websocket流的精简脚本
 
 感谢[live-stream-recorder](https://github.com/printempw/live-stream-recorder)、[GiGaFotress/Vtuber-recorder](https://github.com/GiGaFotress/Vtuber-recorder)  
+
+## 支持的网站列表
+  - YouTube
+  - Twitcast
+  - Twitch
+  - NicoNico
+  - Openrec
+  - mirrativ
+  - reality
+  - 17live
+  - chaturbate
+  - Bilibili
+  - Streamlink
+  - ffmpeg(m3u8)
 
 ## 安装方法
 #### 手动安装(推荐)
@@ -33,7 +49,7 @@ record_twitcast.py是录制twitcast的websocket流的精简脚本
 
 #### 一键安装(谨慎使用)【不建议使用root用户安装】
 
-`curl https://raw.githubusercontent.com/lovezzzxxx/liverecord/master/install.sh | bash`  
+`curl https://raw.githubusercontent.com/ddaodan/liverecord/master/install.sh | bash`  
   * __一键脚本安装后脚本调用方式应为`record/record_new.sh`而非下文示例中的`./record_new.sh`__
   * 一键脚本将会自动安装下列所有环境依赖， __同时会覆盖安装go环境并添加一些环境变量__ ，如果有需要可以注释掉相应的命令或者手动安装环境依赖
   * 其中record.sh、record_new.sh和record_twitcast.py会保存于运行时命令行所在目录的record文件夹下，livedl会保存于运行时命令行所在目录的livedl文件夹下， BilibiliLiveRecorder会解压到运行时命令行所在目录的BilibiliLiveRecorder文件夹下
